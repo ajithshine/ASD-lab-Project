@@ -48,6 +48,7 @@ body .cont .student form input {
   border-bottom: 2px solid black;
   width: 250px;
   height: 30px;
+  outline: none;
 }
 
 body .cont .student form button {
@@ -103,6 +104,7 @@ body .cont .faculty form input {
   border-bottom: 2px solid black;
   width: 250px;
   height: 30px;
+  outline: none;
 }
 
 body .cont .faculty form button {
