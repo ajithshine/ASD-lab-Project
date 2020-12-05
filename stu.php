@@ -1,5 +1,6 @@
 <?php
 include("database.php");
+
 extract($_POST);
 
 if(isset($submit))
