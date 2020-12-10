@@ -1,6 +1,6 @@
 <?php
 session_start();
-$userId =  $_SESSION["login"];
+$regNo =  $_SESSION["login"];
 ?>
 <!DOCTYPE html>
 <html>
@@ -10,13 +10,16 @@ $userId =  $_SESSION["login"];
 <?php
 include("database.php");
 
-$sql = "SELECT name FROM login where user_id='$userId'";
+$sql = "SELECT * FROM students where Reg_no='$regNo'";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
   // output data of each row
   while($row = mysqli_fetch_assoc($result)) {
-    echo "Welcome  " . $row["name"]."<br>";
+    echo "Name: " . $row["Name"]."<br>";
+    echo "Semester: " . $row["Semester"]."<br>";
+    echo "Branch: " . $row["Branch"]."<br>";
+    echo "Faculty-Id: " . $row["Faculty_id"]."<br>";
   }
 } else {
   echo "0 results";
@@ -24,8 +27,6 @@ if (mysqli_num_rows($result) > 0) {
 ?>
 </h4>
 <button><a href="logout.php">Logout</a></button>
-
-
 
 </body>
 </html>

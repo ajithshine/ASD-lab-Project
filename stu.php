@@ -1,18 +1,20 @@
 <?php
 include("database.php");
 
+session_start();
+
 extract($_POST);
 
 if(isset($submit))
 {
-	$rs=mysqli_query($conn,"select * from login where user_id='$user_id' and pass='$pass'");
+	$rs=mysqli_query($conn,"select * from students where Reg_no='$Reg_no' and Password='$Password'");
 	if(mysqli_num_rows($rs)<1)
 	{
 		$found="N";
 	}
 	else
 	{
-		$_SESSION["login"]=$user_id;
+		$_SESSION["login"]=$Reg_no;
 	}
 }
 if (isset($_SESSION["login"]))
@@ -37,8 +39,8 @@ if (isset($_SESSION["login"]))
         <div class="student">
             <p><b>Student Login</b></p>
             <form  method="post">
-                <input type="text" placeholder="Register No" name="user_id"><br><br>
-                <input type="password" placeholder="Password" name="pass"><br><br>
+                <input type="text" placeholder="Register No" name="Reg_no"><br><br>
+                <input type="password" placeholder="Password" name="Password"><br><br>
                 <?php
                
                 if(isset($found))
