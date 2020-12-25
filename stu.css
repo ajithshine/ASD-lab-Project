@@ -54,7 +54,7 @@ body .cont .student form input {
 body .cont .student form button {
     height: 35px;
     width: 90px;
-    margin-top: 40px;
+    margin-top: 10px;
     border-radius: 15px;
 }
 
@@ -111,13 +111,14 @@ body .cont .faculty form input {
 body .cont .faculty form button {
     height: 35px;
     width: 90px;
-    margin-top: 40px;
+    margin-top: 10px;
     border-radius: 15px;
+    margin-top: 0%;
 }
 
 body .cont .faculty form button:hover {
     background-color: #fd3a69;
-    font-size: 15px;
+    font-size: 14px;
     outline: none;
 }
 

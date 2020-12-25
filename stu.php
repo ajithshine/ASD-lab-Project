@@ -5,7 +5,7 @@ extract($_POST);
 
 if(isset($submit))
 {
-	$rs=mysqli_query($conn,"select * from login where user_id='$user_id' and pass='$pass'");
+	$rs=mysqli_query($conn,"select * from students where Regno='$user_id' and Password='$pass'");
 	if(mysqli_num_rows($rs)<1)
 	{
 		$found="N";
@@ -17,7 +17,7 @@ if(isset($submit))
 }
 if (isset($_SESSION["login"]))
 {
-    header("location: welcome.php");
+    header("location: students.php");
 }
 
 ?>
@@ -39,14 +39,14 @@ if (isset($_SESSION["login"]))
             <form  method="post">
                 <input type="text" placeholder="Register No" name="user_id"><br><br>
                 <input type="password" placeholder="Password" name="pass"><br><br>
-                <?php
+                <button class="btn1" name="submit">Login</button>
+                <span><?php
                
                 if(isset($found))
                 {
                     echo "<h6>"."Register No or Password Incorrect"."</h6>";
                 }
-                ?>
-                <button class="btn1" name="submit">Login</button>
+                ?></span>
                 
             </form>
             <div class="footer"></div>

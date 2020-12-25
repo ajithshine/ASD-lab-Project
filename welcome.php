@@ -10,13 +10,13 @@ $userId =  $_SESSION["login"];
 <?php
 include("database.php");
 
-$sql = "SELECT name FROM login where user_id='$userId'";
+$sql = "SELECT Name FROM students where Regno='$userId'";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
   // output data of each row
   while($row = mysqli_fetch_assoc($result)) {
-    echo "Welcome  " . $row["name"]."<br>";
+    echo "Welcome  " . $row["Name"]."<br>";
   }
 } else {
   echo "0 results";
