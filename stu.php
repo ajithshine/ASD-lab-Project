@@ -1,6 +1,8 @@
 <?php
 include("database.php");
 
+session_start();
+
 extract($_POST);
 
 if(isset($submit))
@@ -12,7 +14,7 @@ if(isset($submit))
 	}
 	else
 	{
-		$_SESSION["login"]=$user_id;
+		$_SESSION["login"]=$Reg_no;
 	}
 }
 if (isset($_SESSION["login"]))

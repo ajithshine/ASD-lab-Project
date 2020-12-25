@@ -1,6 +1,6 @@
 <?php
 session_start();
-$userId =  $_SESSION["login"];
+$regNo =  $_SESSION["login"];
 ?>
 <!DOCTYPE html>
 <html>
@@ -24,8 +24,6 @@ if (mysqli_num_rows($result) > 0) {
 ?>
 </h4>
 <button><a href="logout.php">Logout</a></button>
-
-
 
 </body>
 </html>
