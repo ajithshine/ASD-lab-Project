@@ -1,8 +1,6 @@
 <?php
 include("database.php");
-
 session_start();
-
 extract($_POST);
 
 if(isset($submit))
@@ -19,7 +17,7 @@ if(isset($submit))
 }
 if (isset($_SESSION["login"]))
 {
-    header("location: welcome.php");
+    header("location: students.php?link=profile.php");
 }
 
 ?>
