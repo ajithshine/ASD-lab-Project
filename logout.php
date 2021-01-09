@@ -5,6 +5,6 @@ session_start();
 session_unset();
 session_destroy();
 
-header("location: stu.php");
+header("location: login.php");
 
 ?>
